@@ -13,15 +13,24 @@ const seoSchema = z.object({
   featured: z.boolean().default(false),
 });
 
+// Schema compartilhado por conteúdos com FAQ (artigos e comparações).
+const withFaq = seoSchema.extend({
+  category: z.string().optional(),
+  faq: z
+    .array(z.object({ question: z.string(), answer: z.string() }))
+    .optional(),
+});
+
 // Artigos (posts e conteúdos).
 const artigos = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/artigos' }),
-  schema: seoSchema.extend({
-    category: z.string().optional(),
-    faq: z
-      .array(z.object({ question: z.string(), answer: z.string() }))
-      .optional(),
-  }),
+  schema: withFaq,
+});
+
+// Comparações (artigos "A vs B").
+const comparacoes = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/comparacoes' }),
+  schema: withFaq,
 });
 
 // Glossário (termos e conceitos).
@@ -30,4 +39,4 @@ const glossario = defineCollection({
   schema: seoSchema,
 });
 
-export const collections = { artigos, glossario };
+export const collections = { artigos, comparacoes, glossario };

@@ -2,6 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { breadcrumbSchema } from '../lib/seo';
+import { toBase } from '../lib/url';
+import { getCollection } from 'astro:content';
+
+const comparacoes = (await getCollection('comparacoes')).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
 
 const crumbs = [
   { name: 'Início', path: '/' },
@@ -11,7 +17,7 @@ const crumbs = [
 
 <BaseLayout
   title="Comparações de corretoras e criptomoedas"
-  description="Comparativos lado a lado: Binance vs Mercado Bitcoin, Bitcoin vs Ethereum e mais."
+  description="Comparativos lado a lado: Binance vs OKX, Bitcoin vs Ethereum e mais, para facilitar sua decisão."
   canonical="/comparacoes/"
   schema={[breadcrumbSchema(crumbs)]}
 >
@@ -20,6 +26,17 @@ const crumbs = [
     <h1>Comparações</h1>
     <p class="lead">Comparativos lado a lado para facilitar sua decisão.</p>
 
-    <div class="empty">Comparações em breve.</div>
+    {comparacoes.length === 0 ? (
+      <div class="empty">Comparações em breve.</div>
+    ) : (
+      <ul class="article-list">
+        {comparacoes.map((c) => (
+          <li>
+            <a href={toBase(`/comparacoes/${c.id}/`)}>{c.data.title}</a>
+            <p>{c.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )}
   </div>
 </BaseLayout>
