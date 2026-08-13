@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema } from '../lib/seo';
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Autores', url: '/autores/' },
+];
+---
+
+<BaseLayout
+  title={`Autores — ${SITE.title}`}
+  description="Conheça quem escreve e revisa os guias do CryptoTradey."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Autores</h1>
+    <p class="lead">Conheça a equipe por trás dos guias.</p>
+
+    <div class="empty">
+      Páginas de autor em breve (com bio e experiência de cada colaborador).
+    </div>
+  </div>
+</BaseLayout>

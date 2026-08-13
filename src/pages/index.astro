@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CATEGORIES, SITE } from '../consts';
+
+const pillars = [
+  { title: 'Como fazer', code: 'como comprar bitcoin', desc: 'Passo a passo para comprar, vender e sacar.' },
+  { title: 'O que é', code: 'o que é bitcoin', desc: 'Conceitos explicados de forma simples, do zero.' },
+  { title: 'Vale a pena', code: 'mercado bitcoin vale a pena', desc: 'Análises honestas de corretoras e produtos.' },
+  { title: 'Melhor corretora', code: 'melhor corretora de criptomoedas', desc: 'Comparações para escolher a melhor opção.' },
+];
+---
+
+<BaseLayout title={SITE.title} description={SITE.description}>
+  <section class="hero">
+    <div class="container">
+      <h1>Criptomoedas explicadas de forma simples</h1>
+      <p class="lead">
+        Guias passo a passo para brasileiros: como comprar Bitcoin, escolher a
+        melhor corretora, guardar suas criptos com segurança e muito mais.
+      </p>
+      <a class="btn" href="/aprenda/iniciantes/">Comece aqui</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">O que você encontra aqui</h2>
+      <div class="pillar-grid">
+        {pillars.map((p) => (
+          <div class="pillar">
+            <strong>{p.title}</strong>
+            <code>{p.code}</code>
+            <p>{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <h2 class="section-title">Explore por categoria</h2>
+      <div class="card-grid">
+        {CATEGORIES.map((cat) => (
+          <a class="card" href={`/aprenda/${cat.slug}/`}>
+            <h3>{cat.name}</h3>
+            <p>{cat.description}</p>
+          </a>
+        ))}
+        <a class="card" href="/corretoras/">
+          <h3>Corretoras</h3>
+          <p>Reviews e comparativos das principais exchanges.</p>
+        </a>
+        <a class="card" href="/glossario/">
+          <h3>Glossário</h3>
+          <p>Termos e conceitos do universo cripto.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

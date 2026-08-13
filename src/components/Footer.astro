@@ -1,0 +1,43 @@
+---
+import { NAV_LINKS, SITE } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo logo--footer">
+          <span class="logo-mark" aria-hidden="true">₿</span>
+          <span class="logo-text">{SITE.title}</span>
+        </a>
+        <p class="footer-tagline">{SITE.tagline}</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegação do rodapé">
+        <h2 class="footer-title">Conteúdo</h2>
+        {NAV_LINKS.map((link) => (
+          <a href={link.href} class="footer-link">{link.label}</a>
+        ))}
+      </nav>
+
+      <div class="footer-col">
+        <h2 class="footer-title">Institucional</h2>
+        <a href="/sobre/" class="footer-link">Sobre nós</a>
+        <a href="/autores/" class="footer-link">Autores</a>
+        <a href="/contato/" class="footer-link">Contato</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        <strong>Aviso:</strong> este site tem caráter educacional e não é uma
+        recomendação de investimento. Alguns links são de afiliados e podem
+        gerar comissão sem custo adicional para você.
+      </p>
+      <p class="footer-copy">
+        © {year} {SITE.title}. Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>

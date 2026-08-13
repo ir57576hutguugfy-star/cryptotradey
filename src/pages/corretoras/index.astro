@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { breadcrumbSchema } from '../../lib/seo';
+import { getCollection } from 'astro:content';
+
+const corretoras = (await getCollection('corretoras')).sort((a, b) =>
+  b.data.rating - a.data.rating
+);
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Corretoras', url: '/corretoras/' },
+];
+---
+
+<BaseLayout
+  title="Melhores corretoras de criptomoedas"
+  description="Reviews e comparativos das principais corretoras de criptomoedas para brasileiros."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Corretoras de criptomoedas</h1>
+    <p class="lead">
+      Análises honestas para você escolher onde comprar e vender criptomoedas.
+    </p>
+
+    <a class="btn" href="/corretoras/melhores-corretoras/">
+      Ver ranking das melhores corretoras
+    </a>
+
+    {corretoras.length === 0 ? (
+      <div class="empty">Reviews em breve.</div>
+    ) : (
+      <div class="card-grid">
+        {corretoras.map((c) => (
+          <a class="card" href={`/corretoras/${c.id}/`}>
+            <h3>{c.data.exchangeName}</h3>
+            <p>{c.data.verdict}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</BaseLayout>

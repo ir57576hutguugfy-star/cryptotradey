@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { getCollection } from 'astro:content';
+
+const termos = (await getCollection('glossario')).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title, 'pt-BR')
+);
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Glossário', url: '/glossario/' },
+];
+---
+
+<BaseLayout
+  title="Glossário de criptomoedas"
+  description="Dicionário de termos e conceitos do universo cripto, explicados de forma simples."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Glossário</h1>
+    <p class="lead">Termos e conceitos explicados de forma simples.</p>
+
+    {termos.length === 0 ? (
+      <div class="empty">Glossário em breve.</div>
+    ) : (
+      <ul class="article-list">
+        {termos.map((t) => (
+          <li>
+            <a href={`/glossario/${t.id}/`}>{t.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>

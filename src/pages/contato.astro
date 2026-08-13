@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema } from '../lib/seo';
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Contato', url: '/contato/' },
+];
+---
+
+<BaseLayout
+  title={`Contato — ${SITE.title}`}
+  description="Fale com a equipe do CryptoTradey: dúvidas, sugestões e parcerias."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Contato</h1>
+    <p class="lead">Fale com a nossa equipe.</p>
+
+    <p>
+      Dúvidas, sugestões ou correções? Escreva para{' '}
+      <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+  </div>
+</BaseLayout>

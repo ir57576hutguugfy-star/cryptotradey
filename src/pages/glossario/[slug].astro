@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE } from '../../consts';
+import { articleSchema, breadcrumbSchema } from '../../lib/seo';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const termos = await getCollection('glossario');
+  return termos.map((t) => ({
+    params: { slug: t.id },
+    props: { termo: t },
+  }));
+}
+
+const { termo } = Astro.props;
+const { Content } = await render(termo);
+
+const url = `/glossario/${termo.id}/`;
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Glossário', url: '/glossario/' },
+  { name: termo.data.title, url },
+];
+
+const schema = [
+  articleSchema({
+    title: termo.data.title,
+    description: termo.data.description,
+    url: new URL(url, SITE.url).href,
+    image: new URL(SITE.ogImage, SITE.url).href,
+    publishedAt: termo.data.publishedAt.toISOString(),
+    updatedAt: termo.data.updatedAt?.toISOString(),
+    author: termo.data.author,
+  }),
+  breadcrumbSchema(crumbs),
+];
+---
+
+<BaseLayout
+  title={termo.data.title}
+  description={termo.data.description}
+  type="article"
+  canonical={url}
+  schema={schema}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <article class="prose">
+      <h1>{termo.data.title}</h1>
+      <Content />
+    </article>
+  </div>
+</BaseLayout>

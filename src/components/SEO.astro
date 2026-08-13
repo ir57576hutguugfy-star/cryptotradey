@@ -1,0 +1,65 @@
+---
+import { SITE } from '../consts';
+import type { JsonLd } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Absolute or root-relative path. Defaults to the current URL. */
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  /** Additional JSON-LD blocks (Article, FAQPage, HowTo, Review…). */
+  schema?: JsonLd[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = SITE.ogImage,
+  type = 'website',
+  noindex = false,
+  schema = [],
+} = Astro.props;
+
+const fullTitle = title === SITE.title ? title : `${title} · ${SITE.title}`;
+const canonicalUrl = canonical
+  ? new URL(canonical, SITE.url).href
+  : new URL(Astro.url.pathname, SITE.url).href;
+const imageUrl = new URL(image, SITE.url).href;
+---
+
+<!-- Primary -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta name="generator" content={Astro.generator} />
+
+<!-- hreflang (pt-BR, single-language site) -->
+<link rel="alternate" hreflang="pt-BR" href={canonicalUrl} />
+<link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE.title} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<!-- JSON-LD structured data -->
+{schema.map((block) => (
+  <script type="application/ld+json" set:html={JSON.stringify(block)} />
+))}

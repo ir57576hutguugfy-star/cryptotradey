@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CATEGORIES } from '../../consts';
+import { breadcrumbSchema } from '../../lib/seo';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map((cat) => ({
+    params: { categoria: cat.slug },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props;
+
+const artigos = (await getCollection('artigos'))
+  .filter((a) => a.data.category === cat.slug)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Aprenda', url: '/aprenda/' },
+  { name: cat.name, url: `/aprenda/${cat.slug}/` },
+];
+---
+
+<BaseLayout
+  title={`${cat.name} — guias e tutoriais`}
+  description={cat.description}
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>{cat.name}</h1>
+    <p class="lead">{cat.description}</p>
+
+    {artigos.length === 0 ? (
+      <div class="empty">
+        Conteúdo em breve. Estamos preparando os guias desta categoria.
+      </div>
+    ) : (
+      <ul class="article-list">
+        {artigos.map((a) => (
+          <li>
+            <a href={`/aprenda/${cat.slug}/${a.id}/`}>{a.data.title}</a>
+            <p>{a.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>

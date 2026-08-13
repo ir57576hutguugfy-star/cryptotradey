@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../consts';
+---
+
+<BaseLayout
+  title="Página não encontrada"
+  description="A página que você procura não existe ou foi movida."
+  noindex
+>
+  <div class="container" style="padding-top: 4rem; padding-bottom: 4rem; text-align: center;">
+    <h1>404 — Página não encontrada</h1>
+    <p>A página que você procura não existe ou foi movida.</p>
+    <a class="btn" href="/">Voltar para a {SITE.title}</a>
+  </div>
+</BaseLayout>

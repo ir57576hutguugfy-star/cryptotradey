@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CATEGORIES } from '../../consts';
+import { breadcrumbSchema } from '../../lib/seo';
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Aprenda', url: '/aprenda/' },
+];
+---
+
+<BaseLayout
+  title="Aprenda sobre criptomoedas"
+  description="Guias e tutoriais de criptomoedas para brasileiros, organizados por tema: iniciantes, como fazer, carteiras e segurança."
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Aprenda</h1>
+    <p class="lead">Guias e tutoriais organizados por tema.</p>
+
+    <div class="card-grid">
+      {CATEGORIES.map((cat) => (
+        <a class="card" href={`/aprenda/${cat.slug}/`}>
+          <h3>{cat.name}</h3>
+          <p>{cat.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

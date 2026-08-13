@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE } from '../consts';
+import { breadcrumbSchema } from '../lib/seo';
+
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Sobre', url: '/sobre/' },
+];
+---
+
+<BaseLayout
+  title={`Sobre o ${SITE.title}`}
+  description={`Conheça o ${SITE.title}: nossa missão, como produzimos conteúdo e por que você pode confiar nas nossas análises.`}
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <article class="prose">
+      <h1>Sobre o {SITE.title}</h1>
+      <p>
+        O {SITE.title} nasceu para ajudar brasileiros a entender criptomoedas de
+        forma simples, segura e sem promessas milagrosas.
+      </p>
+      <h2>Nossa missão</h2>
+      <p>
+        Explicar conceitos complexos em linguagem acessível e oferecer análises
+        honestas para que você tome decisões informadas.
+      </p>
+      <h2>Como produzimos conteúdo</h2>
+      <ul>
+        <li>Guias revisados e atualizados regularmente;</li>
+        <li>Análises baseadas em dados públicos e testes reais;</li>
+        <li>Transparência total quando usamos links de afiliados.</li>
+      </ul>
+      <h2>Transparência e afiliados</h2>
+      <p>
+        Alguns links deste site são de afiliados: ao usá-los, podemos receber
+        comissão sem nenhum custo adicional para você. Isso nunca influencia
+        nossas análises.
+      </p>
+    </article>
+  </div>
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import { NAV_LINKS, SITE } from '../consts';
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label={`${SITE.title} — Página inicial`}>
+      <span class="logo-mark" aria-hidden="true">₿</span>
+      <span class="logo-text">{SITE.title}</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      {NAV_LINKS.map((link) => (
+        <a
+          href={link.href}
+          class:list={['nav-link', { active: pathname.startsWith(link.href) }]}
+          aria-current={pathname.startsWith(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="/sobre/" class="nav-link">Sobre</a>
+    </nav>
+
+    <details class="nav-mobile">
+      <summary class="nav-toggle" aria-label="Abrir menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </summary>
+      <nav class="nav-mobile-menu" aria-label="Navegação móvel">
+        {NAV_LINKS.map((link) => (
+          <a href={link.href} class="nav-link">{link.label}</a>
+        ))}
+        <a href="/sobre/" class="nav-link">Sobre</a>
+      </nav>
+    </details>
+  </div>
+</header>

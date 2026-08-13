@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE } from '../../consts';
+import { breadcrumbSchema, reviewSchema } from '../../lib/seo';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const corretoras = await getCollection('corretoras');
+  return corretoras.map((c) => ({
+    params: { slug: c.id },
+    props: { corretora: c },
+  }));
+}
+
+const { corretora } = Astro.props;
+const { Content } = await render(corretora);
+
+const url = `/corretoras/${corretora.id}/`;
+const crumbs = [
+  { name: 'Início', url: '/' },
+  { name: 'Corretoras', url: '/corretoras/' },
+  { name: corretora.data.exchangeName, url },
+];
+
+const schema = [
+  reviewSchema({
+    itemName: corretora.data.exchangeName,
+    description: corretora.data.description,
+    url: new URL(url, SITE.url).href,
+    ratingValue: corretora.data.rating,
+    reviewCount: 1,
+  }),
+  breadcrumbSchema(crumbs),
+];
+---
+
+<BaseLayout
+  title={corretora.data.title}
+  description={corretora.data.description}
+  type="article"
+  canonical={url}
+  schema={schema}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <article class="prose">
+      <h1>{corretora.data.title}</h1>
+      <p class="article-meta">
+        Nota: {corretora.data.rating}/5 · Atualizado em{' '}
+        {(corretora.data.updatedAt ?? corretora.data.publishedAt).toLocaleDateString('pt-BR')}
+      </p>
+      <Content />
+    </article>
+  </div>
+</BaseLayout>
