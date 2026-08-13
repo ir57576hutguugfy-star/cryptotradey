@@ -4,15 +4,16 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { breadcrumbSchema } from '../../lib/seo';
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Corretoras', url: '/corretoras/' },
-  { name: 'Melhores corretoras', url: '/corretoras/melhores-corretoras/' },
+  { name: 'Início', path: '/' },
+  { name: 'Corretoras', path: '/corretoras/' },
+  { name: 'Melhores corretoras', path: '/corretoras/melhores-corretoras/' },
 ];
 ---
 
 <BaseLayout
   title="Melhor corretora de criptomoedas no Brasil"
   description="Ranking das melhores corretoras de criptomoedas para brasileiros, com comparativo de taxas, segurança e suporte."
+  canonical="/corretoras/melhores-corretoras/"
   schema={[breadcrumbSchema(crumbs)]}
 >
   <div class="container">

@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { CATEGORIES, SITE } from '../../../consts';
 import { articleSchema, breadcrumbSchema, faqSchema } from '../../../lib/seo';
+import { toAbs } from '../../../lib/url';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -20,21 +21,20 @@ const catName =
   CATEGORIES.find((c) => c.slug === artigo.data.category)?.name ??
   artigo.data.category;
 const url = `/aprenda/${artigo.data.category}/${artigo.id}/`;
-const image = new URL(SITE.ogImage, SITE.url).href;
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Aprenda', url: '/aprenda/' },
-  { name: catName, url: `/aprenda/${artigo.data.category}/` },
-  { name: artigo.data.title, url },
+  { name: 'Início', path: '/' },
+  { name: 'Aprenda', path: '/aprenda/' },
+  { name: catName, path: `/aprenda/${artigo.data.category}/` },
+  { name: artigo.data.title, path: url },
 ];
 
 const schema = [
   articleSchema({
     title: artigo.data.title,
     description: artigo.data.description,
-    url: new URL(url, SITE.url).href,
-    image,
+    url: toAbs(url),
+    image: toAbs(SITE.ogImage),
     publishedAt: artigo.data.publishedAt.toISOString(),
     updatedAt: artigo.data.updatedAt?.toISOString(),
     author: artigo.data.author,

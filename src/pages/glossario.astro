@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { breadcrumbSchema } from '../lib/seo';
+import { toBase } from '../lib/url';
 import { getCollection } from 'astro:content';
 
 const termos = (await getCollection('glossario')).sort((a, b) =>
@@ -9,14 +10,15 @@ const termos = (await getCollection('glossario')).sort((a, b) =>
 );
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Glossário', url: '/glossario/' },
+  { name: 'Início', path: '/' },
+  { name: 'Glossário', path: '/glossario/' },
 ];
 ---
 
 <BaseLayout
   title="Glossário de criptomoedas"
   description="Dicionário de termos e conceitos do universo cripto, explicados de forma simples."
+  canonical="/glossario/"
   schema={[breadcrumbSchema(crumbs)]}
 >
   <div class="container">
@@ -30,7 +32,7 @@ const crumbs = [
       <ul class="article-list">
         {termos.map((t) => (
           <li>
-            <a href={`/glossario/${t.id}/`}>{t.data.title}</a>
+            <a href={toBase(`/glossario/${t.id}/`)}>{t.data.title}</a>
           </li>
         ))}
       </ul>

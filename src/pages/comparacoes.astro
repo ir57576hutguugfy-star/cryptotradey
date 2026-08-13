@@ -4,14 +4,15 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { breadcrumbSchema } from '../lib/seo';
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Comparações', url: '/comparacoes/' },
+  { name: 'Início', path: '/' },
+  { name: 'Comparações', path: '/comparacoes/' },
 ];
 ---
 
 <BaseLayout
   title="Comparações de corretoras e criptomoedas"
   description="Comparativos lado a lado: Binance vs Mercado Bitcoin, Bitcoin vs Ethereum e mais."
+  canonical="/comparacoes/"
   schema={[breadcrumbSchema(crumbs)]}
 >
   <div class="container">

@@ -1,4 +1,5 @@
 import { SITE } from '../consts';
+import { toAbs } from './url';
 
 export type JsonLd = Record<string, unknown>;
 
@@ -31,7 +32,8 @@ export function websiteSchema(): JsonLd {
 
 export interface Crumb {
   name: string;
-  url: string;
+  /** Root-relative path, e.g. "/aprenda/". */
+  path: string;
 }
 
 export function breadcrumbSchema(items: Crumb[]): JsonLd {
@@ -42,7 +44,7 @@ export function breadcrumbSchema(items: Crumb[]): JsonLd {
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: item.url,
+      item: toAbs(item.path),
     })),
   };
 }

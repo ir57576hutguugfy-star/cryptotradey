@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { CATEGORIES } from '../../consts';
 import { breadcrumbSchema } from '../../lib/seo';
+import { toBase } from '../../lib/url';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -19,15 +20,16 @@ const artigos = (await getCollection('artigos'))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Aprenda', url: '/aprenda/' },
-  { name: cat.name, url: `/aprenda/${cat.slug}/` },
+  { name: 'Início', path: '/' },
+  { name: 'Aprenda', path: '/aprenda/' },
+  { name: cat.name, path: `/aprenda/${cat.slug}/` },
 ];
 ---
 
 <BaseLayout
   title={`${cat.name} — guias e tutoriais`}
   description={cat.description}
+  canonical={`/aprenda/${cat.slug}/`}
   schema={[breadcrumbSchema(crumbs)]}
 >
   <div class="container">
@@ -43,7 +45,7 @@ const crumbs = [
       <ul class="article-list">
         {artigos.map((a) => (
           <li>
-            <a href={`/aprenda/${cat.slug}/${a.id}/`}>{a.data.title}</a>
+            <a href={toBase(`/aprenda/${cat.slug}/${a.id}/`)}>{a.data.title}</a>
             <p>{a.data.description}</p>
           </li>
         ))}

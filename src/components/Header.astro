@@ -1,11 +1,15 @@
 ---
 import { NAV_LINKS, SITE } from '../consts';
+import { toBase } from '../lib/url';
+
 const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  pathname.startsWith(toBase(href)) || pathname.startsWith(href);
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="logo" aria-label={`${SITE.title} — Página inicial`}>
+    <a href={toBase('/')} class="logo" aria-label={`${SITE.title} — Página inicial`}>
       <span class="logo-mark" aria-hidden="true">₿</span>
       <span class="logo-text">{SITE.title}</span>
     </a>
@@ -13,14 +17,14 @@ const pathname = Astro.url.pathname;
     <nav class="nav-desktop" aria-label="Navegação principal">
       {NAV_LINKS.map((link) => (
         <a
-          href={link.href}
-          class:list={['nav-link', { active: pathname.startsWith(link.href) }]}
-          aria-current={pathname.startsWith(link.href) ? 'page' : undefined}
+          href={toBase(link.href)}
+          class:list={['nav-link', { active: isActive(link.href) }]}
+          aria-current={isActive(link.href) ? 'page' : undefined}
         >
           {link.label}
         </a>
       ))}
-      <a href="/sobre/" class="nav-link">Sobre</a>
+      <a href={toBase('/sobre/')} class="nav-link">Sobre</a>
     </nav>
 
     <details class="nav-mobile">
@@ -31,9 +35,9 @@ const pathname = Astro.url.pathname;
       </summary>
       <nav class="nav-mobile-menu" aria-label="Navegação móvel">
         {NAV_LINKS.map((link) => (
-          <a href={link.href} class="nav-link">{link.label}</a>
+          <a href={toBase(link.href)} class="nav-link">{link.label}</a>
         ))}
-        <a href="/sobre/" class="nav-link">Sobre</a>
+        <a href={toBase('/sobre/')} class="nav-link">Sobre</a>
       </nav>
     </details>
   </div>

@@ -1,11 +1,12 @@
 ---
 import { SITE } from '../consts';
+import { toAbs } from '../lib/url';
 import type { JsonLd } from '../lib/seo';
 
 interface Props {
   title: string;
   description: string;
-  /** Absolute or root-relative path. Defaults to the current URL. */
+  /** Root-relative path (e.g. "/aprenda/") or absolute URL. */
   canonical?: string;
   image?: string;
   type?: 'website' | 'article';
@@ -25,17 +26,14 @@ const {
 } = Astro.props;
 
 const fullTitle = title === SITE.title ? title : `${title} · ${SITE.title}`;
-const canonicalUrl = canonical
-  ? new URL(canonical, SITE.url).href
-  : new URL(Astro.url.pathname, SITE.url).href;
-const imageUrl = new URL(image, SITE.url).href;
+const canonicalUrl = canonical ? toAbs(canonical) : toAbs(Astro.url.pathname);
+const imageUrl = image.startsWith('http') ? image : toAbs(image);
 ---
 
 <!-- Primary -->
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
-<meta name="generator" content={Astro.generator} />
 
 <!-- hreflang (pt-BR, single-language site) -->
 <link rel="alternate" hreflang="pt-BR" href={canonicalUrl} />

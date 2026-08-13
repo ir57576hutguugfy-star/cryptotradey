@@ -5,7 +5,8 @@ export const SITE = {
   tagline: 'Criptomoedas explicadas de forma simples',
   description:
     'Guias e tutoriais de criptomoedas para brasileiros: como comprar Bitcoin, escolher a melhor corretora, proteger suas criptos e muito mais.',
-  url: 'https://cryptotradey.com',
+  // ⚠️ Deve ser igual ao `site` em astro.config.mjs
+  url: 'https://ir57576hutguugfy-star.github.io',
   locale: 'pt-BR',
   ogImage: '/og-default.png',
   email: 'contato@cryptotradey.com',

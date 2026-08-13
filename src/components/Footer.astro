@@ -1,5 +1,6 @@
 ---
 import { NAV_LINKS, SITE } from '../consts';
+import { toBase } from '../lib/url';
 const year = new Date().getFullYear();
 ---
 
@@ -7,7 +8,7 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo logo--footer">
+        <a href={toBase('/')} class="logo logo--footer">
           <span class="logo-mark" aria-hidden="true">₿</span>
           <span class="logo-text">{SITE.title}</span>
         </a>
@@ -17,15 +18,15 @@ const year = new Date().getFullYear();
       <nav class="footer-col" aria-label="Navegação do rodapé">
         <h2 class="footer-title">Conteúdo</h2>
         {NAV_LINKS.map((link) => (
-          <a href={link.href} class="footer-link">{link.label}</a>
+          <a href={toBase(link.href)} class="footer-link">{link.label}</a>
         ))}
       </nav>
 
       <div class="footer-col">
         <h2 class="footer-title">Institucional</h2>
-        <a href="/sobre/" class="footer-link">Sobre nós</a>
-        <a href="/autores/" class="footer-link">Autores</a>
-        <a href="/contato/" class="footer-link">Contato</a>
+        <a href={toBase('/sobre/')} class="footer-link">Sobre nós</a>
+        <a href={toBase('/autores/')} class="footer-link">Autores</a>
+        <a href={toBase('/contato/')} class="footer-link">Contato</a>
       </div>
     </div>
 

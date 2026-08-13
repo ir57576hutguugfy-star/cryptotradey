@@ -5,14 +5,15 @@ import { SITE } from '../consts';
 import { breadcrumbSchema } from '../lib/seo';
 
 const crumbs = [
-  { name: 'Início', url: '/' },
-  { name: 'Contato', url: '/contato/' },
+  { name: 'Início', path: '/' },
+  { name: 'Contato', path: '/contato/' },
 ];
 ---
 
 <BaseLayout
   title={`Contato — ${SITE.title}`}
   description="Fale com a equipe do CryptoTradey: dúvidas, sugestões e parcerias."
+  canonical="/contato/"
   schema={[breadcrumbSchema(crumbs)]}
 >
   <div class="container">
