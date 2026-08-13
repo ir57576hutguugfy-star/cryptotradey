@@ -4,8 +4,7 @@ export const SITE = {
   title: 'CryptoTradey',
   tagline: 'Criptomoedas explicadas de forma simples',
   description:
-    'Guias e tutoriais de criptomoedas para brasileiros: como comprar Bitcoin, escolher a melhor corretora, proteger suas criptos e muito mais.',
-  // ⚠️ Deve ser igual ao `site` em astro.config.mjs
+    'Glossário e comparações de criptomoedas para brasileiros, explicados de forma simples e segura.',
   url: 'https://ir57576hutguugfy-star.github.io',
   locale: 'pt-BR',
   ogImage: '/og-default.png',
@@ -14,36 +13,6 @@ export const SITE = {
 
 // Main navigation.
 export const NAV_LINKS = [
-  { href: '/aprenda/', label: 'Aprenda' },
-  { href: '/corretoras/', label: 'Corretoras' },
   { href: '/comparacoes/', label: 'Comparações' },
   { href: '/glossario/', label: 'Glossário' },
-] as const;
-
-// Content categories under /aprenda.
-export const CATEGORIES = [
-  {
-    slug: 'iniciantes',
-    name: 'Iniciantes',
-    description: 'O básico para começar do zero.',
-    icon: '🌱',
-  },
-  {
-    slug: 'como-fazer',
-    name: 'Como fazer',
-    description: 'Guias passo a passo para comprar, vender e guardar.',
-    icon: '🧭',
-  },
-  {
-    slug: 'carteiras',
-    name: 'Carteiras',
-    description: 'Como guardar suas criptos com segurança.',
-    icon: '🔐',
-  },
-  {
-    slug: 'seguranca',
-    name: 'Segurança',
-    description: 'Proteja-se contra golpes, fraudes e perdas.',
-    icon: '🛡️',
-  },
 ] as const;

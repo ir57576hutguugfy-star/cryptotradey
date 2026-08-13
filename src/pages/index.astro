@@ -1,19 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { CATEGORIES, SITE } from '../consts';
+import { SITE } from '../consts';
 import { toBase } from '../lib/url';
-
-const pillars = [
-  { icon: '🧭', title: 'Como fazer', code: 'como comprar bitcoin', desc: 'Passo a passo para comprar, vender e sacar.' },
-  { icon: '💡', title: 'O que é', code: 'o que é bitcoin', desc: 'Conceitos explicados de forma simples, do zero.' },
-  { icon: '⚖️', title: 'Vale a pena', code: 'mercado bitcoin vale a pena', desc: 'Análises honestas de corretoras e produtos.' },
-  { icon: '🏆', title: 'Melhor corretora', code: 'melhor corretora de criptomoedas', desc: 'Comparações para escolher a melhor opção.' },
-];
-
-const extraCategories = [
-  { slug: 'corretoras', name: 'Corretoras', desc: 'Reviews e comparativos das principais exchanges.', icon: '💱' },
-  { slug: 'glossario', name: 'Glossário', desc: 'Termos e conceitos do universo cripto.', icon: '📖' },
-];
 ---
 
 <BaseLayout title={SITE.title} description={SITE.description} canonical="/">
@@ -22,17 +10,17 @@ const extraCategories = [
       <span class="eyebrow">Educação cripto gratuita</span>
       <h1>Criptomoedas explicadas de forma <span class="grad">simples</span></h1>
       <p class="lead">
-        Guias passo a passo para brasileiros: como comprar Bitcoin, escolher a
-        melhor corretora, guardar suas criptos com segurança e muito mais.
+        Glossário e comparações para brasileiros entenderem criptomoedas de
+        forma simples e segura.
       </p>
       <div class="hero-features">
-        <span class="hero-feature"><span class="dot"></span>Guias práticos e sem jargão</span>
-        <span class="hero-feature"><span class="dot"></span>Análises independentes</span>
+        <span class="hero-feature"><span class="dot"></span>Explicações diretas</span>
+        <span class="hero-feature"><span class="dot"></span>Sem jargão</span>
         <span class="hero-feature"><span class="dot"></span>Atualizado regularmente</span>
       </div>
       <div class="hero-actions">
-        <a class="btn btn--primary" href={toBase('/aprenda/iniciantes/')}>Começar agora →</a>
-        <a class="btn btn--ghost" href={toBase('/corretoras/melhores-corretoras/')}>Ver melhores corretoras</a>
+        <a class="btn btn--primary" href={toBase('/glossario/')}>Explorar glossário →</a>
+        <a class="btn btn--ghost" href={toBase('/comparacoes/')}>Ver comparações</a>
       </div>
     </div>
   </section>
@@ -40,45 +28,22 @@ const extraCategories = [
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">O que você encontra aqui</span>
-        <h2>Tudo para começar com segurança</h2>
-        <p>Conteúdo direto ao ponto, nos quatro formatos que mais ajudam quem está começando.</p>
-      </div>
-      <div class="pillar-grid">
-        {pillars.map((p) => (
-          <div class="pillar">
-            <strong>{p.icon} {p.title}</strong>
-            <code>{p.code}</code>
-            <p>{p.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Explore por categoria</span>
-        <h2>Encontre o que você precisa</h2>
+        <span class="eyebrow">Conteúdo</span>
+        <h2>O que você encontra aqui</h2>
       </div>
       <div class="card-grid">
-        {CATEGORIES.map((cat) => (
-          <a class="card" href={toBase(`/aprenda/${cat.slug}/`)}>
-            <span class="card-icon">{cat.icon}</span>
-            <h3>{cat.name}</h3>
-            <p>{cat.description}</p>
-            <span class="card-arrow">Explorar →</span>
-          </a>
-        ))}
-        {extraCategories.map((cat) => (
-          <a class="card" href={toBase(`/${cat.slug}/`)}>
-            <span class="card-icon">{cat.icon}</span>
-            <h3>{cat.name}</h3>
-            <p>{cat.desc}</p>
-            <span class="card-arrow">Explorar →</span>
-          </a>
-        ))}
+        <a class="card" href={toBase('/glossario/')}>
+          <span class="card-icon">📖</span>
+          <h3>Glossário</h3>
+          <p>Termos e conceitos do universo cripto explicados de forma simples.</p>
+          <span class="card-arrow">Explorar →</span>
+        </a>
+        <a class="card" href={toBase('/comparacoes/')}>
+          <span class="card-icon">⚖️</span>
+          <h3>Comparações</h3>
+          <p>Comparativos lado a lado para facilitar sua decisão.</p>
+          <span class="card-arrow">Explorar →</span>
+        </a>
       </div>
     </div>
   </section>
