@@ -26,20 +26,24 @@ export const CATEGORIES = [
     slug: 'iniciantes',
     name: 'Iniciantes',
     description: 'O básico para começar do zero.',
+    icon: '🌱',
   },
   {
     slug: 'como-fazer',
     name: 'Como fazer',
     description: 'Guias passo a passo para comprar, vender e guardar.',
+    icon: '🧭',
   },
   {
     slug: 'carteiras',
     name: 'Carteiras',
     description: 'Como guardar suas criptos com segurança.',
+    icon: '🔐',
   },
   {
     slug: 'seguranca',
     name: 'Segurança',
     description: 'Proteja-se contra golpes, fraudes e perdas.',
+    icon: '🛡️',
   },
 ] as const;

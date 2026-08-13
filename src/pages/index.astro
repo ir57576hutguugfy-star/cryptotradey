@@ -4,32 +4,50 @@ import { CATEGORIES, SITE } from '../consts';
 import { toBase } from '../lib/url';
 
 const pillars = [
-  { title: 'Como fazer', code: 'como comprar bitcoin', desc: 'Passo a passo para comprar, vender e sacar.' },
-  { title: 'O que é', code: 'o que é bitcoin', desc: 'Conceitos explicados de forma simples, do zero.' },
-  { title: 'Vale a pena', code: 'mercado bitcoin vale a pena', desc: 'Análises honestas de corretoras e produtos.' },
-  { title: 'Melhor corretora', code: 'melhor corretora de criptomoedas', desc: 'Comparações para escolher a melhor opção.' },
+  { icon: '🧭', title: 'Como fazer', code: 'como comprar bitcoin', desc: 'Passo a passo para comprar, vender e sacar.' },
+  { icon: '💡', title: 'O que é', code: 'o que é bitcoin', desc: 'Conceitos explicados de forma simples, do zero.' },
+  { icon: '⚖️', title: 'Vale a pena', code: 'mercado bitcoin vale a pena', desc: 'Análises honestas de corretoras e produtos.' },
+  { icon: '🏆', title: 'Melhor corretora', code: 'melhor corretora de criptomoedas', desc: 'Comparações para escolher a melhor opção.' },
+];
+
+const extraCategories = [
+  { slug: 'corretoras', name: 'Corretoras', desc: 'Reviews e comparativos das principais exchanges.', icon: '💱' },
+  { slug: 'glossario', name: 'Glossário', desc: 'Termos e conceitos do universo cripto.', icon: '📖' },
 ];
 ---
 
 <BaseLayout title={SITE.title} description={SITE.description} canonical="/">
   <section class="hero">
     <div class="container">
-      <h1>Criptomoedas explicadas de forma simples</h1>
+      <span class="eyebrow eyebrow--light">Educação cripto gratuita</span>
+      <h1>Criptomoedas explicadas de forma <span class="grad">simples</span></h1>
       <p class="lead">
         Guias passo a passo para brasileiros: como comprar Bitcoin, escolher a
         melhor corretora, guardar suas criptos com segurança e muito mais.
       </p>
-      <a class="btn" href={toBase('/aprenda/iniciantes/')}>Comece aqui</a>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href={toBase('/aprenda/iniciantes/')}>Começar agora →</a>
+        <a class="btn btn--ghost" href={toBase('/corretoras/melhores-corretoras/')}>Ver melhores corretoras</a>
+      </div>
+      <div class="hero-trust">
+        <span><span class="dot"></span>Guias práticos e sem jargão</span>
+        <span><span class="dot"></span>Análises independentes</span>
+        <span><span class="dot"></span>Atualizado regularmente</span>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">O que você encontra aqui</h2>
+      <div class="section-head">
+        <span class="eyebrow">O que você encontra aqui</span>
+        <h2>Tudo para começar com segurança</h2>
+        <p>Conteúdo direto ao ponto, nos quatro formatos que mais ajudam quem está começando.</p>
+      </div>
       <div class="pillar-grid">
         {pillars.map((p) => (
           <div class="pillar">
-            <strong>{p.title}</strong>
+            <strong>{p.icon} {p.title}</strong>
             <code>{p.code}</code>
             <p>{p.desc}</p>
           </div>
@@ -40,22 +58,27 @@ const pillars = [
 
   <section class="section section--alt">
     <div class="container">
-      <h2 class="section-title">Explore por categoria</h2>
+      <div class="section-head">
+        <span class="eyebrow">Explore por categoria</span>
+        <h2>Encontre o que você precisa</h2>
+      </div>
       <div class="card-grid">
         {CATEGORIES.map((cat) => (
           <a class="card" href={toBase(`/aprenda/${cat.slug}/`)}>
+            <span class="card-icon">{cat.icon}</span>
             <h3>{cat.name}</h3>
             <p>{cat.description}</p>
+            <span class="card-arrow">Explorar →</span>
           </a>
         ))}
-        <a class="card" href={toBase('/corretoras/')}>
-          <h3>Corretoras</h3>
-          <p>Reviews e comparativos das principais exchanges.</p>
-        </a>
-        <a class="card" href={toBase('/glossario/')}>
-          <h3>Glossário</h3>
-          <p>Termos e conceitos do universo cripto.</p>
-        </a>
+        {extraCategories.map((cat) => (
+          <a class="card" href={toBase(`/${cat.slug}/`)}>
+            <span class="card-icon">{cat.icon}</span>
+            <h3>{cat.name}</h3>
+            <p>{cat.desc}</p>
+            <span class="card-arrow">Explorar →</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
