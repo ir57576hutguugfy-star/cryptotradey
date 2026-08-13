@@ -1,36 +1,39 @@
 ---
-title: Ethereum
-description: Ethereum é a segunda maior criptomoeda e uma plataforma onde rodam aplicativos. Entenda de forma simples.
+title: Ethereum (ETH)
+description: Ethereum é a segunda maior criptomoeda e a principal rede para contratos inteligentes e aplicativos descentralizados. Entenda.
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [ethereum, iniciantes]
 ---
 
-Ethereum é a segunda maior criptomoeda do mundo, atrás apenas do [Bitcoin](/glossario/bitcoin/). Mas ela é mais que uma moeda: é uma **plataforma onde rodam aplicativos**.
+Ethereum é a **segunda maior criptomoeda do mundo**, criada em 2015 por Vitalik Buterin. Mas ela é mais que uma moeda: é uma **plataforma onde outras pessoas criam aplicativos**.
 
-## Não confunda Ethereum com Ether
+## Ethereum e Ether: qual a diferença?
 
-- **Ethereum** é o nome da rede (a "plataforma").
-- **Ether (ETH)** é a moeda usada dentro dessa rede.
+- **Ethereum** é o nome da rede — a "plataforma" onde os aplicativos rodam.
+- **Ether (ETH)** é a moeda nativa dessa rede, usada para pagar as operações.
 
-Quando alguém diz "comprei Ethereum", na prática comprou Ether (ETH).
+Quando alguém fala "comprei Ethereum", na prática está comprando Ether (ETH).
 
-## Uma analogia simples
+## O que são contratos inteligentes?
 
-Se o [Bitcoin](/glossario/bitcoin/) é o "ouro digital", o Ethereum é como um **celular**: um aparelho onde outras pessoas podem instalar aplicativos.
+O grande diferencial do Ethereum são os **contratos inteligentes**: programas que executam sozinhos quando uma condição é cumprida.
 
-Nesses aplicativos, chamados de "contratos inteligentes", você pode:
+Exemplo simples: imagine um "cofrinho" que libera o dinheiro automaticamente quando uma data chega. Ninguém precisa ficar de olho — o programa faz sozinho, sem banco nem cartório no meio.
 
-- Fazer empréstimos
-- Trocar moedas
-- Comprar artes digitais (NFTs)
+Com isso, dá para criar:
 
-Tudo funciona sozinho, sem precisar de um banco ou empresa no meio.
+- **Empréstimos** sem banco (DeFi)
+- **Trocas de moedas** automáticas
+- **Artes digitais** (NFTs)
+- **Jogos** com itens próprios
 
-## Para que serve?
+## Para que serve o ETH?
 
-- **Investir** — comprar e guardar ETH
-- **Usar aplicativos** descentralizados (DeFi)
-- **Pagar taxas** da rede (chamadas de "gas")
+- **Investir** — comprar e guardar, apostando na valorização.
+- **Pagar taxas** da rede — toda operação no Ethereum cobra uma taxa chamada "gas", paga em ETH.
+- **Usar aplicativos** descentralizados.
 
-**Resumindo:** Ethereum é uma rede que funciona como uma "loja de aplicativos" descentralizada, e o Ether (ETH) é a moeda usada dentro dela.
+## Resumo
+
+Ethereum é a "loja de aplicativos" do mundo cripto: uma rede onde programadores criam aplicativos que rodam sozinhos. O Ether (ETH) é a moeda usada dentro dessa rede — a segunda maior do mundo, atrás só do [Bitcoin](/glossario/bitcoin/).

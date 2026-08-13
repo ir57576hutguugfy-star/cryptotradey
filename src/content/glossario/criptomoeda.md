@@ -1,39 +1,45 @@
 ---
 title: Criptomoeda
-description: Criptomoeda é dinheiro digital que funciona sem banco central. Entenda o conceito de forma simples, com exemplos.
+description: Criptomoeda é dinheiro digital protegido por criptografia e que funciona sem banco central. Entenda o conceito completo, com exemplos.
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [criptomoeda, iniciantes]
 ---
 
-Criptomoeda é **dinheiro 100% digital** que funciona sem a necessidade de bancos ou governos. "Cripto" vem de criptografia, a tecnologia que protege essas moedas contra falsificação.
+Criptomoeda é uma **moeda digital** que usa criptografia para ser segura e funciona em uma rede descentralizada, sem a necessidade de bancos ou governos. O nome vem da junção de "cripto" (criptografia) + "moeda".
 
-## Explicando de forma simples
+## Qual a diferença para o dinheiro comum?
 
-Pense no dinheiro que você usa hoje (o real):
+O dinheiro comum (como o real):
 
-- Ele é criado e controlado pelo Banco Central.
-- Para transferir, você precisa de um banco no meio.
-- O governo pode imprimir mais quando quiser.
+- É criado e controlado pelo Banco Central.
+- Precisa de bancos para transferir.
+- Pode ser "imprimido" mais quando o governo quiser.
 
-Uma criptomoeda é diferente:
+A criptomoeda é diferente:
 
-- **Ninguém controla** — ela funciona em uma rede de computadores.
-- Você transfere **direto** de uma pessoa para outra, sem banco no meio.
-- A maioria tem uma quantidade limitada, que não pode ser "imprimida" à vontade.
+- **Não é controlada por ninguém** — funciona em uma [blockchain](/glossario/blockchain/).
+- É transferida **direto entre pessoas**, sem intermediário.
+- A maioria tem **quantidade limitada**, que não pode ser ampliada à vontade.
 
 ## Como funciona?
 
-Toda criptomoeda é registrada em uma [blockchain](/glossario/blockchain/), um tipo de livro de registros público e impossível de alterar. Cada transferência fica gravada para sempre.
+Toda criptomoeda é registrada em uma [blockchain](/glossario/blockchain/), um livro de registros digital e público. Cada transferência é verificada por uma rede de computadores e gravada para sempre — ninguém consegue falsificar ou apagar.
 
-## Exemplos
+## Quais são as principais?
 
-- [Bitcoin](/glossario/bitcoin/) — a primeira e mais famosa, o "ouro digital".
-- [Ethereum](/glossario/ethereum/) — a segunda maior, usada para rodar aplicativos.
-- Existem milhares de outras, cada uma com um propósito diferente.
+Existem milhares de criptomoedas, mas as mais conhecidas são:
 
-## Como começar?
+- **[Bitcoin](/glossario/bitcoin/)** — a primeira, criada em 2009, o "ouro digital".
+- **[Ethereum](/glossario/ethereum/)** — a segunda, usada para rodar aplicativos.
+- **Stablecoins** — moedas digitais com valor atrelado ao dólar, para evitar oscilação.
 
-Para comprar sua primeira criptomoeda, você cria uma conta em uma [corretora](/glossario/corretora/) e deposita reais via [PIX](/glossario/pix/).
+Cada uma tem um objetivo diferente: umas servem para guardar valor, outras para rodar aplicativos, outras para pagamentos.
 
-**Resumindo:** criptomoeda é dinheiro digital, seguro por criptografia, que você controla sem precisar de banco.
+## Onde comprar?
+
+Para comprar criptomoedas, você usa uma [corretora](/glossario/corretora/): cria uma conta, faz o [KYC](/glossario/kyc/), deposita reais via [PIX](/glossario/pix/) e compra a moeda que quiser.
+
+## Resumo
+
+Criptomoeda é dinheiro digital que não depende de banco nem governo, protegido por criptografia e registrado em uma blockchain. O [Bitcoin](/glossario/bitcoin/) foi a primeira e continua sendo a mais conhecida.

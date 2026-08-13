@@ -1,37 +1,55 @@
 ---
-title: Bitcoin
-description: Bitcoin é a primeira criptomoeda do mundo, uma moeda digital que funciona sem bancos. Entenda o que é e como funciona, de forma simples.
+title: Bitcoin (BTC)
+description: Bitcoin é a primeira criptomoeda do mundo, criada em 2009 por Satoshi Nakamoto. Entenda o que é, como funciona e para que serve.
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [bitcoin, iniciantes]
 ---
 
-Bitcoin (BTC) é uma **moeda digital** que funciona sem bancos, governos ou empresas controlando. Você pode enviar e receber bitcoins para qualquer pessoa do mundo, a qualquer hora, sem pedir permissão a ninguém.
+Bitcoin (BTC) é a **primeira criptomoeda do mundo**, criada em 2009 por uma pessoa (ou grupo) sob o pseudônimo de **Satoshi Nakamoto**. Ela funciona em uma rede descentralizada chamada [blockchain](/glossario/blockchain/), sem depender de bancos, governos ou qualquer intermediário.
 
-## Uma forma simples de entender
+## Quem criou o Bitcoin?
 
-Pense no Bitcoin como **ouro digital**. Assim como o ouro:
+Até hoje ninguém sabe quem é Satoshi Nakamoto — pode ser uma pessoa ou um grupo. Em 2008, ele publicou um documento ("whitepaper") explicando como o Bitcoin funcionaria, e em 2009 a rede entrou no ar.
 
-- Ele é **escasso** — só vão existir 21 milhões de bitcoins, nunca mais que isso.
-- Ele não é controlado por nenhum país ou empresa.
-- As pessoas o usam para guardar valor a longo prazo.
-
-A diferença? O ouro é físico e difícil de dividir e enviar. O Bitcoin é digital: você envia qualquer valor para qualquer lugar do mundo em minutos.
+Depois de alguns anos, Satoshi desapareceu da internet, mas o Bitcoin continuou funcionando sozinho — porque não depende de nenhuma pessoa ou empresa para existir.
 
 ## Como funciona?
 
-Todos os bitcoins são registrados em um livro público chamado [blockchain](/glossario/blockchain/). Esse livro é mantido por milhares de computadores espalhados pelo mundo, então ninguém consegue falsificar ou apagar uma transação.
+O Bitcoin roda em uma [blockchain](/glossario/blockchain/), um livro de registros digital e público. Quando alguém envia bitcoin:
 
-Quando você envia bitcoin, a transação é verificada por essa rede e registrada para sempre.
+1. A transação é anunciada para a rede.
+2. Computadores ao redor do mundo (os "mineradores") verificam se ela é válida.
+3. A transação é registrada em um "bloco" e gravada para sempre.
+
+Como milhares de computadores mantêm cópias idênticas do registro, é praticamente impossível falsificar ou apagar uma transação.
+
+## Por que só existem 21 milhões?
+
+Diferente do dinheiro comum, o Bitcoin tem um **limite máximo de 21 milhões de unidades**. Ninguém pode "imprimir" mais bitcoins.
+
+Novos bitcoins entram no sistema aos poucos, como recompensa aos mineradores. Mas, a cada quatro anos, essa recompensa cai pela metade (o chamado "halving"). Isso torna o Bitcoin **escasso**, como o ouro.
+
+## Por que é chamado de "ouro digital"?
+
+Assim como o ouro, o Bitcoin é:
+
+- **Escasso** — limitado a 21 milhões de unidades.
+- **Durável** — não se desgasta nem desaparece.
+- **Descentralizado** — nenhum país ou empresa controla.
+
+E tem vantagens que o ouro não tem: é **digital**, fácil de dividir e de enviar para qualquer lugar do mundo em minutos.
 
 ## Para que serve?
 
-- **Guardar valor** — como uma "poupança digital"
-- **Enviar dinheiro** para outras pessoas
-- **Investir** — muita gente compra e espera valorizar
+- **Reserva de valor** — muita gente compra e guarda a longo prazo.
+- **Enviar dinheiro** — transferências para qualquer pessoa, sem banco no meio.
+- **Investimento** — comprar e vender esperando valorizar.
 
-## Onde comprar?
+## Como comprar?
 
-Você compra bitcoin em uma [corretora](/glossario/corretora/), como a Binance, usando reais via [PIX](/glossario/pix/).
+Você compra bitcoin em uma [corretora](/glossario/corretora/), como a Binance, depositando reais via [PIX](/glossario/pix/) e fazendo o [KYC](/glossario/kyc/) (verificação de identidade).
 
-**Resumindo:** Bitcoin é a primeira moeda digital que ninguém controla, limitada a 21 milhões de unidades. Por isso, muitos o chamam de "ouro digital".
+## Resumo
+
+Bitcoin é a primeira moeda digital do mundo, criada em 2009 por Satoshi Nakamoto. Funciona sem bancos, tem limite de 21 milhões de unidades e é usado principalmente como reserva de valor — por isso o apelido de "ouro digital".

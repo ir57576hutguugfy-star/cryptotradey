@@ -1,28 +1,39 @@
 ---
 title: Blockchain
-description: Blockchain é o livro de registros digital onde todas as criptomoedas funcionam. Entenda o conceito de forma simples.
+description: Blockchain é a tecnologia por trás de todas as criptomoedas: um livro de registros digital, público e praticamente impossível de alterar.
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [blockchain, iniciantes]
 ---
 
-Blockchain (em português, "corrente de blocos") é um **livro de registros digital e público** onde todas as transações de uma criptomoeda ficam gravadas.
+Blockchain (em português, "corrente de blocos") é a **tecnologia que sustenta todas as criptomoedas**. Na prática, é um livro de registros digital, público e praticamente impossível de alterar.
 
-## Uma analogia simples
+## Como funciona, passo a passo?
 
-Imagine um caderno compartilhado:
+Imagine um caderno compartilhado por milhares de pessoas:
 
-- Cada página é um "bloco" com várias transações.
-- Quando uma página enche, ela é **lacrada** e uma nova começa.
-- Todas as páginas são conectadas em uma corrente — por isso "corrente de blocos".
-- Milhares de pessoas têm uma cópia idêntica desse caderno.
+1. Alguém faz uma transação (por exemplo, envia [Bitcoin](/glossario/bitcoin/)).
+2. Várias transações são agrupadas em um **bloco** (uma "página").
+3. Quando a página enche, ela é verificada e **lacrada**.
+4. A página lacrada é conectada à anterior, formando uma **corrente**.
+5. Uma nova página começa, e assim por diante.
 
-Para alguém alterar uma página antiga, precisaria mudar **todas** as cópias do mundo ao mesmo tempo — na prática, impossível. É isso que torna a blockchain segura.
+Por isso o nome: **bloco + corrente = blockchain**.
 
-## Por que isso importa?
+## Por que é segura?
 
-- Ninguém pode falsificar ou apagar uma transação.
-- Não precisa de banco ou empresa confiando no meio.
-- Tudo fica registrado para sempre e pode ser verificado por qualquer um.
+- **Distribuída** — milhares de computadores têm cópias idênticas do registro.
+- **Imutável** — para alterar um registro antigo, seria preciso mudar todas as cópias ao mesmo tempo, o que é praticamente impossível.
+- **Transparente** — qualquer pessoa pode consultar as transações registradas.
 
-**Resumindo:** blockchain é a tecnologia que permite que uma [criptomoeda](/glossario/criptomoeda/) como o [Bitcoin](/glossario/bitcoin/) funcione sem banco, de forma segura e transparente.
+## Para que serve além de criptomoedas?
+
+Embora tenha nascido com o Bitcoin, a blockchain hoje é usada para:
+
+- Registrar contratos (contratos inteligentes)
+- Rastrear a origem de produtos
+- Guardar documentos de forma segura
+
+## Resumo
+
+Blockchain é o "livro de registros" digital e descentralizado que permite que as [criptomoedas](/glossario/criptomoeda/) funcionem sem banco. É a tecnologia que garante segurança e transparência a tudo que roda em cima dela.

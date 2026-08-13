@@ -1,33 +1,39 @@
 ---
 title: KYC (verificação de identidade)
-description: KYC é o processo de verificação de identidade exigido pelas corretoras. Entenda o que é, por que é pedido e como fazer.
+description: KYC é o processo de verificação de identidade que as corretoras exigem. Entenda o que é, por que existe e como fazer passo a passo.
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [kyc, seguranca, iniciantes]
 ---
 
-KYC (do inglês "Know Your Customer", ou "conheça seu cliente") é o processo pelo qual uma [corretora](/glossario/corretora/) **verifica quem você é**, pedindo documentos e foto.
+KYC (do inglês "Know Your Customer", ou "conheça seu cliente") é o processo pelo qual uma [corretora](/glossario/corretora/) **confirma quem você é**, pedindo documentos e foto. É o equivalente digital de mostrar o RG na hora de abrir uma conta no banco.
 
-## Uma analogia simples
+## Por que as corretoras pedem isso?
 
-É como abrir uma conta em um banco: o banco pede seu RG ou CPF para saber com quem está lidando. No mundo cripto, as corretoras fazem o mesmo — só que online.
+O KYC não é uma exigência que a corretora inventou — é **obrigatório por lei** (regulação). Ele serve para:
+
+- **Prevenir lavagem de dinheiro** e fraudes.
+- **Combater o financiamento de crimes**.
+- **Proteger sua conta** — dificulta alguém criar uma conta falsa no seu nome.
 
 ## O que você precisa enviar?
 
-Normalmente, o processo pede:
+O processo normalmente pede três coisas:
 
-1. Uma **foto do seu documento** (RG, CNH ou passaporte)
-2. Uma **selfie** (para provar que é você mesmo)
-3. Às vezes, um comprovante de residência
+1. **Documento com foto** — RG, CNH ou passaporte.
+2. **Selfie** — para confirmar que é você mesmo.
+3. **Comprovante de residência** (às vezes) — conta de luz ou similar.
 
-## Por que é obrigatório?
+## Como funciona o processo?
 
-- É **exigido por lei** (regulação).
-- Ajuda a **prevenir fraudes e lavagem de dinheiro**.
-- **Protege sua conta** — dificulta alguém roubar sua identidade.
+1. Você envia os documentos pelo app da corretora.
+2. A corretora analisa (pode levar de minutos a algumas horas).
+3. Se tudo estiver certo, sua conta é **verificada** e liberada.
 
-## E se eu não fizer?
+## O que acontece se eu não fizer?
 
-Sem completar o KYC, você não consegue depositar, negociar ou sacar valores na maioria das corretoras. É um passo obrigatório para começar de verdade.
+Sem KYC, sua conta fica **limitada**: na maioria das corretoras você não consegue depositar, negociar ou sacar. É um passo obrigatório para operar de verdade.
 
-**Resumindo:** KYC é a checagem de identidade que toda corretora séria pede, para cumprir a lei e proteger sua conta.
+## Resumo
+
+KYC é a verificação de identidade que toda corretora séria exige, por lei. Basta enviar um documento com foto e uma selfie, e sua conta fica liberada para comprar e vender [criptomoedas](/glossario/criptomoeda/).
