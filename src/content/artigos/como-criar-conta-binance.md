@@ -18,7 +18,7 @@ faq:
     answer: Não há um valor mínimo fixo para criar a conta. Você pode começar com valores pequenos, mas lembre-se de que cada operação tem taxas. Consulte os valores mínimos atuais no site oficial.
 ---
 
-> **Transparência:** os links de cadastro nesta página são links de afiliado. Se você criar uma conta por eles, podemos receber uma comissão — sem nenhum custo extra para você.
+> **Transparência:** os links de cadastro nesta página são links de afiliado. Se você criar uma conta por eles, vamos receber uma comissão — sem nenhum custo extra para você.
 
 A Binance é uma das maiores [corretoras](/glossario/corretora/) de criptomoedas do mundo em volume de negociação. Se você está começando no universo cripto no Brasil, abrir uma conta lá é um dos primeiros passos naturais. Neste guia, você vai aprender a criar sua conta, se proteger e fazer o primeiro depósito via PIX — do zero, em poucos minutos.
 
