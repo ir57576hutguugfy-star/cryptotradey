@@ -4,7 +4,7 @@ export const SITE = {
   title: 'CryptoTradey',
   tagline: 'Criptomoedas explicadas de forma simples',
   description:
-    'Artigos, glossário e comparações de criptomoedas para brasileiros, explicados de forma simples e segura.',
+    'Artigos e glossário de criptomoedas para brasileiros, explicados de forma simples e segura.',
   url: 'https://ir57576hutguugfy-star.github.io',
   locale: 'pt-BR',
   ogImage: '/og-default.png',
@@ -14,6 +14,5 @@ export const SITE = {
 // Main navigation.
 export const NAV_LINKS = [
   { href: '/artigos/', label: 'Artigos' },
-  { href: '/comparacoes/', label: 'Comparações' },
   { href: '/glossario/', label: 'Glossário' },
 ] as const;
