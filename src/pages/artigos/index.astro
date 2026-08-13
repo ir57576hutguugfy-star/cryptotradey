@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { breadcrumbSchema } from '../../lib/seo';
+import { toBase } from '../../lib/url';
+import { getCollection } from 'astro:content';
+
+const artigos = (await getCollection('artigos')).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+
+const crumbs = [
+  { name: 'Início', path: '/' },
+  { name: 'Artigos', path: '/artigos/' },
+];
+---
+
+<BaseLayout
+  title="Artigos sobre criptomoedas"
+  description="Artigos e conteúdos sobre criptomoedas para brasileiros, explicados de forma simples."
+  canonical="/artigos/"
+  schema={[breadcrumbSchema(crumbs)]}
+>
+  <div class="container">
+    <Breadcrumbs items={crumbs} />
+    <h1>Artigos</h1>
+    <p class="lead">Conteúdos e análises sobre o universo cripto.</p>
+
+    {artigos.length === 0 ? (
+      <div class="empty">Artigos em breve.</div>
+    ) : (
+      <ul class="article-list">
+        {artigos.map((a) => (
+          <li>
+            <a href={toBase(`/artigos/${a.id}/`)}>{a.data.title}</a>
+            <p>{a.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</BaseLayout>

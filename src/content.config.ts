@@ -13,10 +13,21 @@ const seoSchema = z.object({
   featured: z.boolean().default(false),
 });
 
+// Artigos (posts e conteúdos).
+const artigos = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/artigos' }),
+  schema: seoSchema.extend({
+    category: z.string().optional(),
+    faq: z
+      .array(z.object({ question: z.string(), answer: z.string() }))
+      .optional(),
+  }),
+});
+
 // Glossário (termos e conceitos).
 const glossario = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/glossario' }),
   schema: seoSchema,
 });
 
-export const collections = { glossario };
+export const collections = { artigos, glossario };

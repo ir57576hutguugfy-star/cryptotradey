@@ -19,8 +19,8 @@ import { toBase } from '../lib/url';
         <span class="hero-feature"><span class="dot"></span>Atualizado regularmente</span>
       </div>
       <div class="hero-actions">
-        <a class="btn btn--primary" href={toBase('/glossario/')}>Explorar glossário →</a>
-        <a class="btn btn--ghost" href={toBase('/comparacoes/')}>Ver comparações</a>
+        <a class="btn btn--primary" href={toBase('/artigos/')}>Explorar artigos →</a>
+        <a class="btn btn--ghost" href={toBase('/glossario/')}>Ver glossário</a>
       </div>
     </div>
   </section>
@@ -32,6 +32,12 @@ import { toBase } from '../lib/url';
         <h2>O que você encontra aqui</h2>
       </div>
       <div class="card-grid">
+        <a class="card" href={toBase('/artigos/')}>
+          <span class="card-icon">📝</span>
+          <h3>Artigos</h3>
+          <p>Conteúdos e análises sobre o universo cripto.</p>
+          <span class="card-arrow">Explorar →</span>
+        </a>
         <a class="card" href={toBase('/glossario/')}>
           <span class="card-icon">📖</span>
           <h3>Glossário</h3>
