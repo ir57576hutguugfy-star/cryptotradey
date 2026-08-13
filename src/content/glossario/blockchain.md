@@ -1,6 +1,6 @@
 ---
 title: Blockchain
-description: Blockchain é a tecnologia por trás de todas as criptomoedas: um livro de registros digital, público e praticamente impossível de alterar.
+description: "Blockchain é a tecnologia por trás de todas as criptomoedas: um livro de registros digital, público e praticamente impossível de alterar."
 publishedAt: 2026-08-13
 author: Equipe CryptoTradey
 tags: [blockchain, iniciantes]
