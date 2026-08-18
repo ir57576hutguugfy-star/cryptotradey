@@ -16,18 +16,11 @@ const year = new Date().getFullYear();
       </div>
 
       <nav class="footer-col" aria-label="Navegação do rodapé">
-        <h2 class="footer-title">Conteúdo</h2>
         {NAV_LINKS.map((link) => (
           <a href={toBase(link.href)} class="footer-link">{link.label}</a>
         ))}
-      </nav>
-
-      <div class="footer-col">
-        <h2 class="footer-title">Institucional</h2>
         <a href={toBase('/sobre/')} class="footer-link">Sobre nós</a>
-        <a href={toBase('/autores/')} class="footer-link">Autores</a>
-        <a href={toBase('/contato/')} class="footer-link">Contato</a>
-      </div>
+      </nav>
     </div>
 
     <div class="footer-bottom">
